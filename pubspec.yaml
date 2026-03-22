@@ -1,0 +1,71 @@
+name: streamvault_iptv
+description: StreamVault — IPTV Player multiplateforme (MAC/Stalker, Xtream, M3U)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Lecteur vidéo ─────────────────────────────────────────────────────
+  flutter_vlc_player: ^7.4.1          # VLC natif (HLS, MPEG-TS, RTSP, MMS)
+  video_player: ^2.8.2                 # Fallback HTML5
+
+  # ── Réseau & HTTP ─────────────────────────────────────────────────────
+  dio: ^5.4.3                          # Client HTTP avancé
+  http: ^1.2.1                         # Requêtes simples
+
+  # ── Base de données locale ────────────────────────────────────────────
+  sqflite: ^2.3.2                      # SQLite
+  path: ^1.9.0
+
+  # ── State management ──────────────────────────────────────────────────
+  provider: ^6.1.2
+  riverpod: ^2.5.1
+  flutter_riverpod: ^2.5.1
+
+  # ── Storage ───────────────────────────────────────────────────────────
+  shared_preferences: ^2.2.3           # Préférences utilisateur
+  flutter_secure_storage: ^9.0.0       # Stockage sécurisé (tokens, PIN)
+
+  # ── XML / M3U / EPG ───────────────────────────────────────────────────
+  xml: ^6.5.0                          # Parser XML pour EPG (XMLTV)
+  m3u_parser: ^0.1.0                   # Parser M3U
+
+  # ── UI ────────────────────────────────────────────────────────────────
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
+  cached_network_image: ^3.3.1         # Cache logos chaînes
+  shimmer: ^3.0.0                      # Loading skeleton
+  lottie: ^3.1.0                       # Animations
+
+  # ── Utilitaires ───────────────────────────────────────────────────────
+  connectivity_plus: ^6.0.3            # Détection réseau
+  package_info_plus: ^8.0.0            # Info app
+  url_launcher: ^6.3.0
+  crypto: ^3.0.3                       # Hash MD5 pour Stalker auth
+  uuid: ^4.4.0                         # Génération UUID / MAC
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+  fonts:
+    - family: Rajdhani
+      fonts:
+        - asset: assets/fonts/Rajdhani-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Rajdhani-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Rajdhani-Bold.ttf
+          weight: 700
